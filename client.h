@@ -1,7 +1,6 @@
 #ifndef CLIENT_H_INCLUDED
 #define CLIENT_H_INCLUDED
 
-
 // NETWORK
 #define NUM_LOOPS 50000000 //80000000  //2240000 about a half hour running   1500000 //in ms 2000 just to get the weights strong enough,
                       // then increase very high to check none other fire
@@ -14,12 +13,10 @@
 #define TAU_REC      600 //260
 #define TAU_FACIL   1950 //1100
 
-
 // For layer 5 synapses
 #define USEL5        0.5 //0.1 // 0.03
 #define TAU_REC_L5   570   //580  //720  // 775  // 820 // 280  // increasing moves maximum to 18Hz and down to 0.119477     INCREASE: LARGER isi, down
 #define TAU_FACIL_L5 2100 //2500  //2300 //3000  //4000 //1000  // increasing moves maximum to 20Hz and up to   0.177624     INCREASE: LARGER isi, up
-
 
 // Layer 3
 #define USE_L3             0.05
@@ -46,8 +43,6 @@
 #define TAU_REC_DRIGHT    820  // increasing moves maximum to 18Hz and down to 0.119477     INCREASE: LARGER isi, down
 #define TAU_FACIL_DRIGHT 4000  // increasing moves maximum to 20Hz and up to   0.177624     INCREASE: LARGER isi, up
 
-
-
 // The variables for the 3 synapses below are for the side synapses
 //// close to wall synapse. This is used by both side synapses and front synapse. Maximum Y (0.156469) at frequency 10 for front sensor
 #define TAU_REC_CLOSE   200  // increasing moves maximum to 18Hz and down to 0.119477     INCREASE: LARGER isi, down
@@ -57,19 +52,14 @@
 #define TAU_REC_MID    505  // increasing moves maximum to 18Hz and down to 0.119477     INCREASE: LARGER isi, down
 #define TAU_FACIL_MID 1455  // increasing moves maximum to 20Hz and up to   0.177624     INCREASE: LARGER isi, up
 
-
 ////// far from wall synapse. Maximum Y (0.156212) at frequency 16
 #define TAU_REC_FAR    826  // increasing moves maximum to 18Hz and down to 0.119477     INCREASE: LARGER isi, down
 #define TAU_FACIL_FAR 4000  // increasing moves maximum to 20Hz and up to   0.177624     INCREASE: LARGER isi, up
-
 
 // The variables for the synapse below is for the far front synapse
 //// long synapse. Maximum Y (0.1582) at ISI 95
 #define TAU_REC_FAR_F    804  // increasing moves maximum to 18Hz and down to 0.119477     INCREASE: LARGER isi, down
 #define TAU_FACIL_FAR_F 4000  // increasing moves maximum to 20Hz and up to   0.177624     INCREASE: LARGER isi, up
-
-
-
 
 #define D_ASE 4.2e-8  // ASE for decision
 // 160 input (left)
@@ -80,20 +70,14 @@
 // 4.2e-8 OK, one firing at 200
 // 4.1 too small
 
-
 // in range 160:200isi input outputs 160:200isi
 // out of range outputs >=320isi
 #define L2_ASE 5.04e-8  //  // 4.98e-8 too low           5.1e-8 too high
-
-
 #define L3_ASE  1.9e-8  // 1.88e-8: 2small
-
-
 #define L4_ASE_LEFT  8.5e-9  //8.0e-9  // ASE from decision cell Left 8.3e-9ok   8.35e-9_2high
 #define L4_ASE_RIGHT 8.85e-9 //8.35e-9 // ASE from decision cell Right     8.5e-9_2high
 #define L4_ASE_SENSE 2.0e-8 //2.10e-8 //2.15e-8 // ASE from sense  2.1e-8_2low   2.2e-8_2HIGH
 #define USE_L4       0.05
-
 
 #define L5_ASE 1e-7 //1e-6
 #define L5_ASE_CUT 1.055e-7 //1.02e-7 too low    1.06e-7 too high
@@ -107,13 +91,6 @@
 //  4.84e-8   1:1 input:output  200 isi output
 //  4.81e-8 -> 4.83e-8   2:1 input:output  400 isi output
 //  <=4.80e-8    no output
-
-
-
-
-
-
-
 
 // LIF Neuron variables
 //#define R_MEM_BASE 1e+9                       //  (Ohms 1000 * 10^6) Membrane resistence
@@ -129,7 +106,6 @@
 // TAU_MEM   = 40;    //  (ms) Neuron membrane time constant
 // Ts        = 1;    // size of delta T for Euler calculations
 // TAU_CONST = (Ts / (-1 * tau_mem)  => (1/(-1 * 60))  => -0.025
-
 
 // Layer 1
 #define USE_L1       0.05
@@ -148,21 +124,17 @@
 // long   neuron ISIs 90->111
 #define ISIS         {59, 61, 64, 66, 69, 72, 74, 77, 79, 82, 85, 87, 90, 92, 95, 98, 100, 103, 105, 108, 111}// check against incremented ISI for spike
 
-
 //     FRONT*10 +SIDE         00,01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22
 //#define INDEX_SENSE2L1_LEFT  { 0, 2, 4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1, 1, 3, 5}
 #define INDEX_SENSE2L1_RIGHT { 6, 8,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1, 7, 9,11}
-
 
 #define LOW_MAX     899 // side 2, sensors 2 and 5
 #define MID_MIN     900
 #define MID_MAX    1049
 #define HIGH_MIN   1050
 #define HIGH_MAX   2000
-
 #define FRONT_HIGH_MIN  750
 #define FRONT_HIGH_MAX 2000
-
 
 // Layer 2
 #define MAX_L2NEURS  12 // maximum number of neurons in each region of layer 2
@@ -176,7 +148,6 @@
 #define REFRACT_L2   {0,0,0,0,0,0,0,0,0,0,0,0}
 #define ISIL2        {0,0,0,0,0,0,0,0,0,0,0,0}
 #define L1_L2_COMBOS {{-1,-1,-1,-1,-1,-1,-1,-1,-1}, {-1,-1,-1,-1,-1,-1,-1,-1,-1}}
-
 
 // Layer 3
 #define MAX_L3NEURS 36 // maximum number of neurons in layer 3
@@ -213,7 +184,6 @@
 #define VOLTDIR     {0.0,0.0,0.0}
 #define REFRACT_DIR {0,0,0}
 
-
 // Layer 5
 #define MAX_L5NEURS 3 // maximum number of neurons in each region of layer 3 (18^2)
 #define MAX_L5SYNAP 36
@@ -227,7 +197,6 @@
 #define SPIKEL5     { 0,  0,  0}
 #define ISIL5       { 0,  0,  0}
 #define ASEL5       {{L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}, {L5_ASE,L5_ASE,L5_ASE}}
-
 
 // Learning values
 #define TURN_CUT_OFF   4.5e-9 //1e-9
@@ -295,6 +264,5 @@ void computeL3L4(int neuron, double L4weight, int direct, int followSide);
 //long long timeval_diff(struct timeval *difference, struct timeval *end_time, struct timeval *start_time);
 void computeL5();
 void reinitialize_variables();
-
 
 #endif // CLIENT_H_INCLUDED
