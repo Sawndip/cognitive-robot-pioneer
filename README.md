@@ -1,4 +1,4 @@
-# bio-realistic-controller
+# cognitive-robot-pioneer
 A deep neural network robot navigation system inspired by the sensory fusion and control structures of biological systems written for the Pioneer 3-DX robot for the Player/Stage[1] system.
 Details of the system can be found here: http://ieeexplore.ieee.org/document/6220278/
 
